@@ -16,13 +16,13 @@ const Scan = {
   getAllScans:(callback)=>{
         db.all(`SELECT * FROM scans`,[],callback);
     },
-    // getScanByPatientId:(patientId,callback) => {
-    //     db.get(`SELECT * FROM scans WHERE patientId='${patientId}'`,
-    //         function(err,job){
-    //             callback(err,job)
-    //         }
-    //     )
-    // },
+    getScanByPatientId:(patientId,callback) => {
+        db.get(`SELECT * FROM scans WHERE patientId='${patientId}'`,
+            function(err,job){
+                callback(err,job)
+            }
+        )
+    },
 };
 
 module.exports = Scan;
