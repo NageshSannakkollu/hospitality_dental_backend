@@ -1,8 +1,8 @@
-const sqlite3 = require("sqlite3");
+const Database = require('better-sqlite3');
 const path = require("path")
 const dbPath = path.join(__dirname,"database.db");
 
-let db = new sqlite3.Database(dbPath,(err) => {
+let db = new Database(dbPath,(err) => {
     if(err){
         console.log(`DB Connection Error:${err.message}`)
     }else{
